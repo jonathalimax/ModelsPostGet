@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelsPostGet.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,15 @@ namespace ModelsPostGet.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var pessoa = new Pessoa();
+            return View(pessoa);
+        }
+
+        [HttpPost]
+        public ActionResult Index(int PessoaId, String Nome, String Instagram)
+        {
+            var pessoa = new Pessoa(PessoaId, Nome, Instagram);
+            return View(pessoa);
         }
 
         public ActionResult About()
@@ -24,6 +33,11 @@ namespace ModelsPostGet.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Register()
+        {
             return View();
         }
     }

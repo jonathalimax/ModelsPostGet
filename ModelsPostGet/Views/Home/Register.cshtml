@@ -1,0 +1,65 @@
+﻿@model ModelsPostGet.Models.Pessoa
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@* Criando form utilizando Helpers *@
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Pessoa</legend>
+        <div>
+            @Html.LabelFor(x=> x.PessoaId)
+        </div>
+        <div>
+            @Html.EditorFor(x=> x.PessoaId)
+        </div>
+
+        <div>
+            @Html.LabelFor(x=> x.Nome)
+        </div>
+        <div>
+            @Html.EditorFor(x=> x.Nome)
+        </div>
+
+        <div>
+            @Html.LabelFor(x=> x.Instagram)
+        </div>
+        <div>
+            @Html.EditorFor(x=> x.Instagram)
+        </div>
+
+        <p><input type="submit" value="Cadastrar" /></p>
+    </fieldset>
+}
+
+@*<form action="Index" method="POST">
+    <fieldset>
+        <legend>Pessoa</legend>
+        <div>
+            <label for="PessoaId">Codigo</label>
+        </div>
+        <div>
+            <input type="number" id="PessoaId" name="PessoaId" />
+        </div>
+
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="text" id="Nome" name="Nome" />
+        </div>
+
+        <div>
+            <label for="Instagram">Instagram</label>
+        </div>
+        <div>
+            <input type="text" id="Instagram" name="Instagram"/>
+        </div>
+
+        <p><input type="submit" value="Cadastrar" /></p>
+    </fieldset>
+</form>*@
